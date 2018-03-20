@@ -62,7 +62,7 @@ class DefaultsBinder extends FlowDefinition {
         if (!(exec instanceof WorkflowRun)) {
             throw new IllegalStateException("inappropriate context");
         }
-        Config config = ConfigFiles.getByIdOrNull(exec, PipelineBranchDefaultsProjectFactory.SCRIPT)        
+        Config config = ConfigFiles.getByIdOrNull((Run<?, ?>)exec, PipelineBranchDefaultsProjectFactory.SCRIPT)        
         if (config == null) {
             ConfigFileStore store = GlobalConfigFiles.get();
             if (store != null) {
